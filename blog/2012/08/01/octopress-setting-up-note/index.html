@@ -9,8 +9,10 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Generate SSH Key 1
+2
+[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
+[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | xclip Past public key to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,7 +93,104 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><ul>
+<li>Generate SSH Key</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
+</span><span class='line'>[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | xclip</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>Past public key to github<br/>
+Open https://github.com/account/ssh<br/>
+Add another public key</p></li>
+<li><p>Get octopress code</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git wulliam.github.com</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Preare ruby environment</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update
+</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Creat a new post</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["post title"]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Preivew blog in localhost</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Open browser to check</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://127.0.0.1:4000</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Preare your github project <br/>
+If you have an account name <em>wulliam</em> in github.com, then create a project name <em>wulliam.github.com</em></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages
+</span><span class='line'>and input your github project url
+</span><span class='line'>git@github.com:wulliam/wulliam.github.com.git</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Check in source to github (in source branch)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m "Initial porject"
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Check in blogs to github (in master branch)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
