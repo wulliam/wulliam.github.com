@@ -9,10 +9,9 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="Generate SSH Key 1
-2
-[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
-[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | xclip Past public key to &hellip;">
+  <meta name="description" content="Need to install Ruby1.9.2
+Need to install DevKit for windows environment After install DevKid(extract to a folder)
+Run devkitvars.bat to update path &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +66,121 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/">Setup Up Ruby Environment for Octopress Blog</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-01T18:08:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p>Need to install <a href="http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.2-p290.exe">Ruby1.9.2</a></p></li>
+<li><p>Need to install <a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit</a> for windows environment <br/>
+After install DevKid(extract to a folder)<br/>
+Run devkitvars.bat to update path env or add bin folder to path env<br/>
+Can skip to install RVM or RBENV in windows, skip</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm use 1.9.2@rails31</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Get Ruby bundle</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">Contributing to an Existing Octopress Blog</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-01T17:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Take my blog as example <em>wulliam.github.com</em><br/>
+You will use following command to get source code (from source branch) and blog content (form master branch)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:wulliam/wulliam.github.com.git
+</span><span class='line'>git checkout source
+</span><span class='line'>mkdir _deploy
+</span><span class='line'>cd _deploy
+</span><span class='line'>git init
+</span><span class='line'>git remote add origin git@github.com:wulliam/wulliam.github.com.git
+</span><span class='line'>git pull origin master
+</span><span class='line'>cd ..
+</span><span class='line'>rake new_post["new post to share"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>reference to original post(GWF will block this url) <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one" title="Octopress: Setting up a Blog and Contributing to an Existing One">Octopress: Setting up a Blog and Contributing to an Existing One</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -214,6 +328,14 @@ If you have an account name <em>wulliam</em> in github.com, then create a projec
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/">Setup up ruby environment for Octopress blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">contributing to an existing Octopress blog</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/08/01/octopress-setting-up-note/">Octopress setting up note</a>

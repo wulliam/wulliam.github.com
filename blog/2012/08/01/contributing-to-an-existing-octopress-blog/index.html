@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
+  <title>contributing to an existing Octopress blog - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="Blog Archive 2012 Setup up ruby environment for Octopress blog
-Aug 01 2012 posted in Octopress, Ruby contributing to an existing Octopress blog
-Aug &hellip;">
+  <meta name="description" content="Take my blog as example wulliam.github.com
+You will use following command to get source code (from source branch) and blog content (form master &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ Aug &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://wulliam.github.com/blog/archives/">
+  <link rel="canonical" href="http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -65,55 +64,103 @@ Aug &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Contributing to an Existing Octopress Blog</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-01T17:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Take my blog as example <em>wulliam.github.com</em><br/>
+You will use following command to get source code (from source branch) and blog content (form master branch)</p>
 
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/">Setup up ruby environment for Octopress blog</a></h1>
-<time datetime="2012-08-01T18:08:00+08:00" pubdate><span class='month'>Aug</span> <span class='day'>01</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">contributing to an existing Octopress blog</a></h1>
-<time datetime="2012-08-01T17:45:00+08:00" pubdate><span class='month'>Aug</span> <span class='day'>01</span> <span class='year'>2012</span></time>
-
-
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:wulliam/wulliam.github.com.git
+</span><span class='line'>git checkout source
+</span><span class='line'>mkdir _deploy
+</span><span class='line'>cd _deploy
+</span><span class='line'>git init
+</span><span class='line'>git remote add origin git@github.com:wulliam/wulliam.github.com.git
+</span><span class='line'>git pull origin master
+</span><span class='line'>cd ..
+</span><span class='line'>rake new_post["new post to share"]</span></code></pre></td></tr></table></div></figure>
 
 
-
-<article>
-  
-<h1><a href="/blog/2012/08/01/octopress-setting-up-note/">Octopress setting up note</a></h1>
-<time datetime="2012-08-01T15:25:00+08:00" pubdate><span class='month'>Aug</span> <span class='day'>01</span> <span class='year'>2012</span></time>
-
-
-</article>
-
+<p>reference to original post(GWF will block this url) <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one" title="Octopress: Setting up a Blog and Contributing to an Existing One">Octopress: Setting up a Blog and Contributing to an Existing One</a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-01T17:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog/" data-via="" data-counturl="http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/01/octopress-setting-up-note/" title="Previous Post: Octopress setting up note">&laquo; Octopress setting up note</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/" title="Next Post: Setup up ruby environment for Octopress blog">Setup up ruby environment for Octopress blog &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
