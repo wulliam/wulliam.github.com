@@ -1,17 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Wuliang's Blog]]></title>
   <link href="http://wulliam.github.com/atom.xml" rel="self"/>
   <link href="http://wulliam.github.com/"/>
-  <updated>2012-08-01T20:19:55+08:00</updated>
+  <updated>2012-08-02T15:14:51+08:00</updated>
   <id>http://wulliam.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Wuliang]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/02/git-note/"/>
+    <updated>2012-08-02T13:48:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/02/git-note</id>
+    <content type="html"><![CDATA[<p>This is a note from <em><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic">Git Magic</a></em></p>
+
+<h4>Process to get project from github and update code to do commit</h4>
+
+<p>push your project to git github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push git@github.com:wulliam/wulliam.github.com.git HEAD</span></code></pre></td></tr></table></div></figure>
+
+
+<p>get a project from github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone git@github.com:wulliam/wulliam.github.com.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>commit your code local</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git add .
+</span><span class='line'>$ git commit -a</span></code></pre></td></tr></table></div></figure>
+
+
+<p>update lastet code from github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull</span></code></pre></td></tr></table></div></figure>
+
+
+<p>after solve conflict make a commit local</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git commit -a</span></code></pre></td></tr></table></div></figure>
+
+
+<p>push the local change to github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Useful git command</h4>
+
+<p>Add, Delete, Rename</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git add readme.txt Documentation
+</span><span class='line'>$ git rm kludge.h obsolete.c
+</span><span class='line'>$ git rm -r incriminating/evidence/
+</span><span class='line'>$ git mv bug.c feature.c</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Undo/Redo</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git log
+</span><span class='line'>$ git reset --hard
+</span><span class='line'>$ git checkout 82f5
+</span><span class='line'>$ git checkout master
+</span><span class='line'>$ git checkout 82f5 some.file another.file
+</span><span class='line'>$ git checkout master~5
+</span><span class='line'>$ git reset --hard 766f</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Reverting</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git commit -a
+</span><span class='line'>$ git revert 1b6d</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Get a file</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://server/path/to/files</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Deff</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git diff
+</span><span class='line'>$ git diff "@{yesterday}"
+</span><span class='line'>$ git diff 1b6d "master~2"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Quick fix(make a temp fixes branch, after fix, delete branch)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git commit -a
+</span><span class='line'>$ git checkout -b fixes 1b6d
+</span><span class='line'>$ git commit -a -m "Bug fixed"
+</span><span class='line'>$ git checkout master
+</span><span class='line'>$ git merge fixes
+</span><span class='line'>$ git branch -d fixes </span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Uninterrupted Workflow(simliar to quick fix)</h4>
+
+<p>You are working on master branch, and want to hold on to review, you start branch part2 to continue</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git checkout -b part2
+</span><span class='line'>$ git checkout master  # Go back to Part I.
+</span><span class='line'>$ fix_problem
+</span><span class='line'>$ git commit -a        # Commit the fixes.
+</span><span class='line'>$ git checkout part2   # Go back to Part II.
+</span><span class='line'>$ git merge master     # Merge in those fixes.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Eventually, Part I(master) is approved:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git checkout master  # Go back to Part I.
+</span><span class='line'>$ submit files         # Release to the world!
+</span><span class='line'>$ git merge part2      # Merge in Part II.
+</span><span class='line'>$ git branch -d part2  # Delete "part2" branch.</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setup up ruby environment for Octopress blog]]></title>
