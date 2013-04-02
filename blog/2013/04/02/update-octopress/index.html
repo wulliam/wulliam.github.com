@@ -5,14 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress setting up note - Wuliang's Blog</title>
+  <title>Update Octopress - Wuliang's Blog</title>
   <meta name="author" content="Wuliang">
 
   
-  <meta name="description" content="Generate SSH Key 1
-2
-[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
-[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | xclip Past public key to &hellip;">
+  <meta name="description" content="Add Octopress Respository 1
+$ git remote add octopress https://github.com/imathis/octopress.git Update Octopress 1
+$ git pull octopress master Do not &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note">
+  <link rel="canonical" href="http://wulliam.github.com/blog/2013/04/02/update-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Wuliang's Blog" type="application/atom+xml">
@@ -83,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">Octopress Setting Up Note</h1>
+      <h1 class="entry-title">Update Octopress</h1>
     
     
       <p class="meta">
@@ -99,113 +98,81 @@
   
 
 
-<time datetime="2012-08-01T15:25:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
+<time datetime="2013-04-02T23:04:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li>Generate SSH Key</li>
-</ul>
-
+<div class="entry-content"><h4>Add Octopress Respository</h4>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
-</span><span class='line'>[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | xclip</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote add octopress https://github.com/imathis/octopress.git</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li><p>Past public key to github<br/>
-Open https://github.com/account/ssh<br/>
-Add another public key</p></li>
-<li><p>Get octopress code</p></li>
-</ul>
-
+<h4>Update Octopress</h4>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git wulliam.github.com</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull octopress master</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li>Preare ruby environment</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update
-</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Creat a new post</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["post title"]</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Preivew blog in localhost</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Open browser to check</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>http://127.0.0.1:4000</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Preare your github project <br/>
-If you have an account name <em>wulliam</em> in github.com, then create a project name <em>wulliam.github.com</em></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
-
-
-<p>   and input your github project url</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git@github.com:wulliam/wulliam.github.com.git</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Check in source to github (in source branch)</li>
-</ul>
-
+<h4>Do not change to &#8220;sync&#8221;, rollback change to use &#8220;push&#8221; and &#8220;master&#8221;</h4>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
-</span><span class='line'>git commit -m "Initial porject"
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</span><span class='line'> rsync_delete   = true
+</span><span class='line'> deploy_default = "push"
+</span><span class='line'>-=======
+</span><span class='line'>-rsync_delete   = false
+</span><span class='line'>-rsync_args     = ""  # Any extra arguments to pass to rsync
+</span><span class='line'>-deploy_default = "rsync"
+</span><span class='line'>-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 75cc24c8d602d509e6b272db983489090595f001
+</span><span class='line'>-
+</span><span class='line'> # This will be configured for you when you run config_deploy
+</span><span class='line'> deploy_branch  = "master"</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li>Check in blogs to github (in master branch)</li>
-</ul>
-
+<h4>Update bundles</h4>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle install
+</span><span class='line'>$ rake update_source
+</span><span class='line'>$ rake update_style</span></code></pre></td></tr></table></div></figure>
 
+
+<h4>Preview and push changes</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rake generate
+</span><span class='line'>$ git commit -a
+</span><span class='line'>$ git push origin master
+</span><span class='line'>$ rake deploy
+</span><span class='line'>$ rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Problems</h4>
+
+<p>After update Octopress, you can preview new post but can not deploy new posts, you need to
+<code>$ rake setup_github_pages</code> redo initialize</p>
+
+<p>If you meet <code>fatal: ‘octopress’ does not appear to be a git repository</code> error, execute <code>$ git remote add octopress https://github.com/imathis/octopress.git</code></p>
 </div>
 
 
@@ -228,12 +195,12 @@ If you have an account name <em>wulliam</em> in github.com, then create a projec
   
 
 
-<time datetime="2012-08-01T15:25:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
+<time datetime="2013-04-02T23:04:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/github/'>github</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>
   
 </span>
 
@@ -242,7 +209,7 @@ If you have an account name <em>wulliam</em> in github.com, then create a projec
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note/" data-via="" data-counturl="http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wulliam.github.com/blog/2013/04/02/update-octopress/" data-via="" data-counturl="http://wulliam.github.com/blog/2013/04/02/update-octopress/" >Tweet</a>
   
   
   
@@ -251,8 +218,8 @@ If you have an account name <em>wulliam</em> in github.com, then create a projec
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/04/02/setup-phpmyadmin-in-centos/" title="Previous Post: Setup phpMyAdmin in centos">&laquo; Setup phpMyAdmin in centos</a>
       
-        <a class="basic-alignment right" href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/" title="Next Post: Contributing to an existing Octopress blog">Contributing to an existing Octopress blog &raquo;</a>
       
     </p>
   </footer>

@@ -9,14 +9,9 @@
   <meta name="author" content="Wuliang">
 
   
-  <meta name="description" content="Check centos version 1
-2
-3
-4
-5
-6
-[root@centos5 ~]# lsb_release -a
-LSB Version: :core-4.0-amd64:core-4.0-ia32:core-4.0-noarch:graphics-4.0-amd64: &hellip;">
+  <meta name="description" content="Add Octopress Respository 1
+$ git remote add octopress https://github.com/imathis/octopress.git Update Octopress 1
+$ git pull octopress master Do not &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +79,109 @@ LSB Version: :core-4.0-amd64:core-4.0-ia32:core-4.0-noarch:graphics-4.0-amd64: &
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/02/update-octopress/">Update Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-02T23:04:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>Add Octopress Respository</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git remote add octopress https://github.com/imathis/octopress.git</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Update Octopress</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull octopress master</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Do not change to &#8220;sync&#8221;, rollback change to use &#8220;push&#8221; and &#8220;master&#8221;</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</span><span class='line'> rsync_delete   = true
+</span><span class='line'> deploy_default = "push"
+</span><span class='line'>-=======
+</span><span class='line'>-rsync_delete   = false
+</span><span class='line'>-rsync_args     = ""  # Any extra arguments to pass to rsync
+</span><span class='line'>-deploy_default = "rsync"
+</span><span class='line'>-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 75cc24c8d602d509e6b272db983489090595f001
+</span><span class='line'>-
+</span><span class='line'> # This will be configured for you when you run config_deploy
+</span><span class='line'> deploy_branch  = "master"</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Update bundles</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle install
+</span><span class='line'>$ rake update_source
+</span><span class='line'>$ rake update_style</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Preview and push changes</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rake generate
+</span><span class='line'>$ git commit -a
+</span><span class='line'>$ git push origin master
+</span><span class='line'>$ rake deploy
+</span><span class='line'>$ rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Problems</h4>
+
+<p>After update Octopress, you can preview new post but can not deploy new posts, you need to
+<code>$ rake setup_github_pages</code> redo initialize</p>
+
+<p>If you meet <code>fatal: ‘octopress’ does not appear to be a git repository</code> error, execute <code>$ git remote add octopress https://github.com/imathis/octopress.git</code></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -887,6 +985,10 @@ If you have an account name <em>wulliam</em> in github.com, then create a projec
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/02/update-octopress/">Update Octopress</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/02/setup-phpmyadmin-in-centos/">Setup phpMyAdmin in centos</a>
       </li>
     
@@ -899,11 +1001,7 @@ If you have an account name <em>wulliam</em> in github.com, then create a projec
       </li>
     
       <li class="post">
-        <a href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">contributing to an existing Octopress blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/01/octopress-setting-up-note/">Octopress setting up note</a>
+        <a href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">Contributing to an existing Octopress blog</a>
       </li>
     
   </ul>

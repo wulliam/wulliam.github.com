@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Wuliang's Blog]]></title>
   <link href="http://wulliam.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://wulliam.github.com/"/>
-  <updated>2013-04-02T22:06:29+08:00</updated>
+  <updated>2013-04-02T23:42:49+08:00</updated>
   <id>http://wulliam.github.com/</id>
   <author>
     <name><![CDATA[Wuliang]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Update Octopress]]></title>
+    <link href="http://wulliam.github.com/blog/2013/04/02/update-octopress/"/>
+    <updated>2013-04-02T23:04:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2013/04/02/update-octopress</id>
+    <content type="html"><![CDATA[<h4>Add Octopress Respository</h4>
+
+<p><code>
+$ git remote add octopress https://github.com/imathis/octopress.git
+</code></p>
+
+<h4>Update Octopress</h4>
+
+<p><code>
+$ git pull octopress master
+</code></p>
+
+<h4>Do not change to "sync", rollback change to use "push" and "master"</h4>
+
+<p>```
+-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+ rsync_delete   = true
+ deploy_default = "push"
+-=======
+-rsync_delete   = false
+-rsync_args     = ""  # Any extra arguments to pass to rsync
+-deploy_default = "rsync"</p>
+
+<h2>->>>>>>> 75cc24c8d602d509e6b272db983489090595f001</h2>
+
+<p> # This will be configured for you when you run config_deploy
+ deploy_branch  = "master"
+```</p>
+
+<h4>Update bundles</h4>
+
+<p><code>
+$ bundle install
+$ rake update_source
+$ rake update_style
+</code></p>
+
+<h4>Preview and push changes</h4>
+
+<p><code>
+$ rake generate
+$ git commit -a
+$ git push origin master
+$ rake deploy
+$ rake deploy
+</code></p>
+
+<h4>Problems</h4>
+
+<p>After update Octopress, you can preview new post but can not deploy new posts, you need to
+<code>$ rake setup_github_pages</code> redo initialize</p>
+
+<p>If you meet <code>fatal: ‘octopress’ does not appear to be a git repository</code> error, execute <code>$ git remote add octopress https://github.com/imathis/octopress.git</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setup up ruby environment for Octopress blog]]></title>
@@ -30,6 +91,90 @@ rvm use 1.9.2@rails31
 <li><p>Get Ruby bundle
 <code>
 bundle update
+</code></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Contributing to an existing Octopress blog]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog/"/>
+    <updated>2012-08-01T17:45:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog</id>
+    <content type="html"><![CDATA[<p>Take my blog as example <em>wulliam.github.com</em><br/>
+You will use following command to get source code (from source branch) and blog content (form master branch)</p>
+
+<p><code>
+git clone git@github.com:wulliam/wulliam.github.com.git
+git checkout source
+mkdir _deploy
+cd _deploy
+git init
+git remote add origin git@github.com:wulliam/wulliam.github.com.git
+git pull origin master
+cd ..
+rake new_post["new post to share"]
+</code></p>
+
+<p>reference to original post(GWF will block this url) <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one" title="Octopress: Setting up a Blog and Contributing to an Existing One">Octopress: Setting up a Blog and Contributing to an Existing One</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress setting up note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note/"/>
+    <updated>2012-08-01T15:25:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>Generate SSH Key
+<code>
+[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
+[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub | xclip
+</code></p></li>
+<li><p>Past public key to github<br/>
+Open https://github.com/account/ssh<br/>
+Add another public key</p></li>
+<li><p>Get octopress code
+<code>
+git clone git://github.com/imathis/octopress.git wulliam.github.com
+</code></p></li>
+<li><p>Preare ruby environment
+<code>
+bundle update
+rake install
+</code></p></li>
+<li><p>Creat a new post
+<code>
+rake new_post["post title"]
+</code></p></li>
+<li><p>Preivew blog in localhost
+<code>
+rake preview
+</code></p></li>
+<li><p>Open browser to check
+<code>
+http://127.0.0.1:4000
+</code></p></li>
+<li><p>Preare your github project <br/>
+If you have an account name <em>wulliam</em> in github.com, then create a project name <em>wulliam.github.com</em>
+<code>
+rake setup_github_pages
+</code>
+and input your github project url
+<code>
+git@github.com:wulliam/wulliam.github.com.git
+</code></p></li>
+<li><p>Check in source to github (in source branch)
+<code>
+git add .
+git commit -m "Initial porject"
+git push origin source
+</code></p></li>
+<li><p>Check in blogs to github (in master branch)
+<code>
+rake generate
+rake deploy
 </code></p></li>
 </ul>
 

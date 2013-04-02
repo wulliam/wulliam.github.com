@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | Wuliang's Blog]]></title>
+  <link href="http://wulliam.github.com/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://wulliam.github.com/"/>
+  <updated>2013-04-02T23:42:49+08:00</updated>
+  <id>http://wulliam.github.com/</id>
+  <author>
+    <name><![CDATA[Wuliang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress setting up note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note/"/>
+    <updated>2012-08-01T15:25:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>Generate SSH Key
+<code>
+[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
+[[ -f ~/.ssh/id_rsa.pub ]] &amp;&amp; cat ~/.ssh/id_rsa.pub | xclip
+</code></p></li>
+<li><p>Past public key to github<br/>
+Open https://github.com/account/ssh<br/>
+Add another public key</p></li>
+<li><p>Get octopress code
+<code>
+git clone git://github.com/imathis/octopress.git wulliam.github.com
+</code></p></li>
+<li><p>Preare ruby environment
+<code>
+bundle update
+rake install
+</code></p></li>
+<li><p>Creat a new post
+<code>
+rake new_post["post title"]
+</code></p></li>
+<li><p>Preivew blog in localhost
+<code>
+rake preview
+</code></p></li>
+<li><p>Open browser to check
+<code>
+http://127.0.0.1:4000
+</code></p></li>
+<li><p>Preare your github project <br/>
+If you have an account name <em>wulliam</em> in github.com, then create a project name <em>wulliam.github.com</em>
+<code>
+rake setup_github_pages
+</code>
+and input your github project url
+<code>
+git@github.com:wulliam/wulliam.github.com.git
+</code></p></li>
+<li><p>Check in source to github (in source branch)
+<code>
+git add .
+git commit -m "Initial porject"
+git push origin source
+</code></p></li>
+<li><p>Check in blogs to github (in master branch)
+<code>
+rake generate
+rake deploy
+</code></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
