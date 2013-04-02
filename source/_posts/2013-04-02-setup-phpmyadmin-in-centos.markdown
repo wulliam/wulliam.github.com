@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "setup phpMyAdmin in centos"
+title: "Setup phpMyAdmin in centos"
 date: 2013-04-02 10:50
 comments: true
 categories: Nginx phpMyAdmin Centos
@@ -177,7 +177,7 @@ with
 fastcgi_pass unix:/var/run/php5-fpm.sock;
 ```
 
-＊ Install phpMyAdmin
+* Install phpMyAdmin
 
 ```
 [root@centos5 ~]# yum --enablerepo=remi,remi-test install phpmyadmin --skip-broken

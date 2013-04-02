@@ -105,3 +105,12 @@ $ submit files         # Release to the world!
 $ git merge part2      # Merge in Part II.
 $ git branch -d part2  # Delete "part2" branch.
 ```
+
+####Merge
+
+```
+$git mergetool
+$git checkout --ours filename.c
+$git checkout --theirs filename.c
+$git config merge.conflictstyle diff3
+```
