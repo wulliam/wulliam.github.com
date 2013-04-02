@@ -1,0 +1,107 @@
+---
+layout: post
+title: "Git note"
+date: 2012-08-02 13:48
+comments: true
+categories: Git
+---
+This is a note from _[Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic)_
+
+#### Process to get project from github and update code to do commit
+push your project to git github 
+```
+$ git push git@github.com:wulliam/wulliam.github.com.git HEAD
+```
+
+get a project from github
+```
+$ git clone git@github.com:wulliam/wulliam.github.com.git
+```
+
+commit your code local
+```
+$ git add .
+$ git commit -a
+```
+
+update lastet code from github
+```
+$ git pull
+```
+
+after solve conflict make a commit local
+```
+$ git commit -a
+```
+
+push the local change to github
+```
+$ git push
+```
+
+####Useful git command
+Add, Delete, Rename
+```
+$ git add readme.txt Documentation
+$ git rm kludge.h obsolete.c
+$ git rm -r incriminating/evidence/
+$ git mv bug.c feature.c
+```
+
+Undo/Redo
+```
+$ git log
+$ git reset --hard
+$ git checkout 82f5
+$ git checkout master
+$ git checkout 82f5 some.file another.file
+$ git checkout master~5
+$ git reset --hard 766f
+```
+
+Reverting
+```
+$ git commit -a
+$ git revert 1b6d
+```
+
+Get a file
+```
+git clone git://server/path/to/files
+```
+
+Deff 
+```
+$ git diff
+$ git diff "@{yesterday}"
+$ git diff 1b6d "master~2"
+```
+
+Quick fix(make a temp fixes branch, after fix, delete branch)
+```
+$ git commit -a
+$ git checkout -b fixes 1b6d
+$ git commit -a -m "Bug fixed"
+$ git checkout master
+$ git merge fixes
+$ git branch -d fixes 
+```
+
+
+####Uninterrupted Workflow(simliar to quick fix)
+You are working on master branch, and want to hold on to review, you start branch part2 to continue
+```
+$ git checkout -b part2
+$ git checkout master  # Go back to Part I.
+$ fix_problem
+$ git commit -a        # Commit the fixes.
+$ git checkout part2   # Go back to Part II.
+$ git merge master     # Merge in those fixes.
+```
+Eventually, Part I(master) is approved:
+```
+$ git checkout master  # Go back to Part I.
+$ submit files         # Release to the world!
+$ git merge part2      # Merge in Part II.
+$ git branch -d part2  # Delete "part2" branch.
+```

@@ -3,9 +3,15 @@
 # ----------------------- #
 
 url: http://wulliam.github.com
+<<<<<<< HEAD
 title: Wuliang's Blog 
 subtitle: A blogging to note about coding 
 author: Wuliang 
+=======
+title: Wuliang's Blog
+subtitle: A blogging as a technical note.
+author: Wuliang
+>>>>>>> 0fe4f8a9f85e436bc6d2a46b854db64837bdc7f1
 simple_search: http://google.com/search
 description:
 
@@ -93,7 +99,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-33817385-1
 
 # Facebook Like
 facebook_like: false
