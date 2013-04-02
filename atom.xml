@@ -1,119 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Wuliang's Blog</title>
-  <meta name="author" content="Wuliang">
-
-  
-  <meta name="description" content="Check centos version 1
-2
-3
-4
-5
-6
-[root@centos5 ~]# lsb_release -a
-LSB Version: :core-4.0-amd64:core-4.0-ia32:core-4.0-noarch:graphics-4.0-amd64: &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://wulliam.github.com">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Wuliang's Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-33817385-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Wuliang's Blog</a></h1>
-  
-    <h2>A blogging as a technical note.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:wulliam.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Wuliang's Blog]]></title>
+  <link href="http://wulliam.github.com/atom.xml" rel="self"/>
+  <link href="http://wulliam.github.com/"/>
+  <updated>2013-04-02T22:06:29+08:00</updated>
+  <id>http://wulliam.github.com/</id>
+  <author>
+    <name><![CDATA[Wuliang]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/04/02/setup-phpmyadmin-in-centos/">Setup phpMyAdmin in Centos</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-04-02T10:50:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
+  <entry>
+    <title type="html"><![CDATA[Setup phpMyAdmin in centos]]></title>
+    <link href="http://wulliam.github.com/blog/2013/04/02/setup-phpmyadmin-in-centos/"/>
+    <updated>2013-04-02T10:50:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2013/04/02/setup-phpmyadmin-in-centos</id>
+    <content type="html"><![CDATA[<ul>
 <li>Check centos version</li>
 </ul>
 
@@ -427,42 +332,15 @@ with</p>
 </span><span class='line'>            }
 </span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/02/git-note/">Git Note</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-02T13:48:00+08:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a note from <em><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic">Git Magic</a></em></p>
+  <entry>
+    <title type="html"><![CDATA[Git note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/02/git-note/"/>
+    <updated>2012-08-02T13:48:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/02/git-note</id>
+    <content type="html"><![CDATA[<p>This is a note from <em><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic">Git Magic</a></em></p>
 
 <h4>Process to get project from github and update code to do commit</h4>
 
@@ -617,42 +495,15 @@ with</p>
 </span><span class='line'>$git checkout --theirs filename.c
 </span><span class='line'>$git config merge.conflictstyle diff3</span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/">Setup Up Ruby Environment for Octopress Blog</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-01T18:08:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
+  <entry>
+    <title type="html"><![CDATA[Setup up ruby environment for Octopress blog]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/"/>
+    <updated>2012-08-01T18:08:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog</id>
+    <content type="html"><![CDATA[<ul>
 <li><p>Need to install <a href="http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.2-p290.exe">Ruby1.9.2</a></p></li>
 <li><p>Need to install <a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit</a> for windows environment <br/>
 After install DevKid(extract to a folder)<br/>
@@ -673,42 +524,15 @@ Can skip to install RVM or RBENV in windows, skip</p></li>
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>bundle update</span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">Contributing to an Existing Octopress Blog</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-01T17:45:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Take my blog as example <em>wulliam.github.com</em><br/>
+  <entry>
+    <title type="html"><![CDATA[contributing to an existing Octopress blog]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog/"/>
+    <updated>2012-08-01T17:45:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog</id>
+    <content type="html"><![CDATA[<p>Take my blog as example <em>wulliam.github.com</em><br/>
 You will use following command to get source code (from source branch) and blog content (form master branch)</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -732,42 +556,15 @@ You will use following command to get source code (from source branch) and blog 
 
 
 <p>reference to original post(GWF will block this url) <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one" title="Octopress: Setting up a Blog and Contributing to an Existing One">Octopress: Setting up a Blog and Contributing to an Existing One</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/01/octopress-setting-up-note/">Octopress Setting Up Note</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-01T15:25:00+08:00" pubdate data-updated="true">Aug 1<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
+  <entry>
+    <title type="html"><![CDATA[Octopress setting up note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note/"/>
+    <updated>2012-08-01T15:25:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note</id>
+    <content type="html"><![CDATA[<ul>
 <li>Generate SSH Key</li>
 </ul>
 
@@ -867,84 +664,7 @@ If you have an account name <em>wulliam</em> in github.com, then create a projec
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
 </span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/04/02/setup-phpmyadmin-in-centos/">Setup phpMyAdmin in centos</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/02/git-note/">Git note</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/">Setup up ruby environment for Octopress blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/01/contributing-to-an-existing-octopress-blog/">contributing to an existing Octopress blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/01/octopress-setting-up-note/">Octopress setting up note</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Wuliang -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

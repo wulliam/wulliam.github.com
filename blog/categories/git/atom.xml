@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git | Wuliang's Blog]]></title>
+  <link href="http://wulliam.github.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://wulliam.github.com/"/>
+  <updated>2013-04-02T22:06:29+08:00</updated>
+  <id>http://wulliam.github.com/</id>
+  <author>
+    <name><![CDATA[Wuliang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/02/git-note/"/>
+    <updated>2012-08-02T13:48:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/02/git-note</id>
+    <content type="html"><![CDATA[<p>This is a note from <em><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic">Git Magic</a></em></p>
+
+<h4>Process to get project from github and update code to do commit</h4>
+
+<p>push your project to git github
+<code>
+$ git push git@github.com:wulliam/wulliam.github.com.git HEAD
+</code></p>
+
+<p>get a project from github
+<code>
+$ git clone git@github.com:wulliam/wulliam.github.com.git
+</code></p>
+
+<p>commit your code local
+<code>
+$ git add .
+$ git commit -a
+</code></p>
+
+<p>update lastet code from github
+<code>
+$ git pull
+</code></p>
+
+<p>after solve conflict make a commit local
+<code>
+$ git commit -a
+</code></p>
+
+<p>push the local change to github
+<code>
+$ git push
+</code></p>
+
+<h4>Useful git command</h4>
+
+<p>Add, Delete, Rename
+<code>
+$ git add readme.txt Documentation
+$ git rm kludge.h obsolete.c
+$ git rm -r incriminating/evidence/
+$ git mv bug.c feature.c
+</code></p>
+
+<p>Undo/Redo
+<code>
+$ git log
+$ git reset --hard
+$ git checkout 82f5
+$ git checkout master
+$ git checkout 82f5 some.file another.file
+$ git checkout master~5
+$ git reset --hard 766f
+</code></p>
+
+<p>Reverting
+<code>
+$ git commit -a
+$ git revert 1b6d
+</code></p>
+
+<p>Get a file
+<code>
+git clone git://server/path/to/files
+</code></p>
+
+<p>Deff
+<code>
+$ git diff
+$ git diff "@{yesterday}"
+$ git diff 1b6d "master~2"
+</code></p>
+
+<p>Quick fix(make a temp fixes branch, after fix, delete branch)
+<code>
+$ git commit -a
+$ git checkout -b fixes 1b6d
+$ git commit -a -m "Bug fixed"
+$ git checkout master
+$ git merge fixes
+$ git branch -d fixes
+</code></p>
+
+<h4>Uninterrupted Workflow(simliar to quick fix)</h4>
+
+<p>You are working on master branch, and want to hold on to review, you start branch part2 to continue
+<code>
+$ git checkout -b part2
+$ git checkout master  # Go back to Part I.
+$ fix_problem
+$ git commit -a        # Commit the fixes.
+$ git checkout part2   # Go back to Part II.
+$ git merge master     # Merge in those fixes.
+</code>
+Eventually, Part I(master) is approved:
+<code>
+$ git checkout master  # Go back to Part I.
+$ submit files         # Release to the world!
+$ git merge part2      # Merge in Part II.
+$ git branch -d part2  # Delete "part2" branch.
+</code></p>
+
+<h4>Merge</h4>
+
+<p><code>
+$git mergetool
+$git checkout --ours filename.c
+$git checkout --theirs filename.c
+$git config merge.conflictstyle diff3
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

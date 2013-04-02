@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: phpMyAdmin | Wuliang's Blog]]></title>
+  <link href="http://wulliam.github.com/blog/categories/phpmyadmin/atom.xml" rel="self"/>
+  <link href="http://wulliam.github.com/"/>
+  <updated>2013-04-02T22:06:29+08:00</updated>
+  <id>http://wulliam.github.com/</id>
+  <author>
+    <name><![CDATA[Wuliang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setup phpMyAdmin in centos]]></title>
+    <link href="http://wulliam.github.com/blog/2013/04/02/setup-phpmyadmin-in-centos/"/>
+    <updated>2013-04-02T10:50:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2013/04/02/setup-phpmyadmin-in-centos</id>
+    <content type="html"><![CDATA[<ul>
+<li>Check centos version</li>
+</ul>
+
+
+<p><code>
+[root@centos5 ~]# lsb_release -a
+LSB Version:    :core-4.0-amd64:core-4.0-ia32:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-ia32:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-ia32:printing-4.0-noarch
+Distributor ID: CentOS
+Description:    CentOS release 5.6 (Final)
+Release:    5.6
+Codename:   Final
+</code></p>
+
+<p><code>
+[root@centos5 ~]# uname -a
+Linux centos5.localdomain 2.6.18-238.el5xen #1 SMP Thu Jan 13 16:41:45 EST 2011 x86_64 x86_64 x86_64 GNU/Linux
+</code></p>
+
+<p>It's 64-bit. "x86_64" means 64-bit. If it was 32-bit, it would be "i686"</p>
+
+<ul>
+<li>Check to find nginx installed</li>
+</ul>
+
+
+<p><code>
+[root@centos5 ~]# yum list installed | grep nginx
+nginx.x86_64                          1.2.6-1.el5.ngx                  installed
+</code>
+* Need to install php
+<code>
+yum install php php-fpm php-common php-mysql
+</code></p>
+
+<ul>
+<li>Can not install php-fpm</li>
+</ul>
+
+
+<p><code>
+[root@centos5 ~]# yum install php-fpm
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.grandcloud.cn
+ * epel: mirrors.ustc.edu.cn
+ * extras: mirrors.grandcloud.cn
+ * updates: mirrors.grandcloud.cn
+Setting up Install Process
+No package php-fpm available.
+Nothing to do
+</code>
+By using the remi,remi-test repository to install php-fpm.</p>
+
+<p><code>
+[root@centos5 ~]# yum --enablerepo=remi,remi-test install php-fpm
+</code></p>
+
+<ul>
+<li>Start php-fpm and check</li>
+</ul>
+
+
+<p>```
+[root@centos5 ~]# /etc/init.d/php-fpm start
+Starting php-fpm:                                          [  OK  ]</p>
+
+<p>```</p>
+
+<p>Manually start</p>
+
+<p><code>
+/etc/init.d/nginx start
+/etc/init.d/php-fpm start
+</code>
+or</p>
+
+<p><code>
+service nginx start
+service php-fpm start
+</code></p>
+
+<p>To start on boot</p>
+
+<p><code>
+chkconfig --add nginx
+chkconfig --levels 235 nginx on
+</code></p>
+
+<p><code>
+chkconfig --add php-fpm
+chkconfig --levels 235 php-fpm on
+</code></p>
+
+<ul>
+<li>Create folder for website and logs</li>
+</ul>
+
+
+<p><code>
+[root@centos5 ~]# mkdir -p /opt/web/www/phpmyadmin/public_html
+[root@centos5 ~]# mkdir -p /opt/web/www/phpmyadmin/logs
+[root@centos5 ~]# chown -R nginx:nginx /opt/web/www/
+</code></p>
+
+<ul>
+<li>Configuring Nginx</li>
+</ul>
+
+
+<p>Creating public folders and logs:</p>
+
+<p><code>
+[root@centos5 ~]# mkdir -p /opt/web/www/phpmyadmin/public_html
+[root@centos5 ~]# mkdir -p /opt/web/www/phpmyadmin/logs
+[root@centos5 ~]# chown -R nginx:nginx /opt/web/www/
+</code></p>
+
+<p>Create folers for virtual hosts</p>
+
+<p><code>
+[root@centos5 ~]# mkdir /etc/nginx/sites-available
+[root@centos5 ~]# mkdir /etc/nginx/sites-enabled
+</code></p>
+
+<p>Add to /etc/nginx/nginx.conf file after "include /etc/nginx/conf.d/*.conf":<code>include /etc/nginx/sites-enabled/*;</code></p>
+
+<p>Add phpmyadmin virtual host as below:</p>
+
+<p>```
+server {</p>
+
+<pre><code>server_name phpmyadmin;
+access_log /opt/web/www/phpmyadmin/logs/access.log;
+error_log /opt/web/www/phpmyadmin/logs/error.log;
+root /opt/web/www/phpmyadmin/public_html;
+
+location / {
+    index index.html index.htm index.php;
+}
+
+location ~ \.php$ {
+    include /etc/nginx/fastcgi_params;
+    fastcgi_pass  127.0.0.1:9000;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME /opt/web/www/phpmyadmin/public_html$fastcgi_script_name;
+}
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<p>Create a symlink to the virtual host and restart Nginx</p>
+
+<p><code>
+[root@centos5 nginx]# ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/phpmyadmin
+[root@centos5 nginx]# service nginx restart
+</code></p>
+
+<p>Create a phpinfo.php file to test PHP-FPM</p>
+
+<p>```
+[root@centos5 nginx]# vi /opt/web/www/phpmyadmin/public_html/info.php</p>
+
+<p>&lt;?php
+phpinfo();
+?></p>
+
+<p>```</p>
+
+<p>Add virtual Domain to host file</p>
+
+<p>```</p>
+
+<h1>vi /etc/hosts</h1>
+
+<p>127.0.0.1      localhost.localdomain localhost phpmyadmin</p>
+
+<p>```</p>
+
+<p>Now access to htp://phpmyadmin/info.php to verify phpmyadmin website works.</p>
+
+<p>Optional, replace <code>
+fastcgi_pass 127.0.0.1:9000;
+</code>
+with
+<code>
+fastcgi_pass unix:/var/run/php5-fpm.sock;
+</code></p>
+
+<ul>
+<li>Install phpMyAdmin</li>
+</ul>
+
+
+<p><code>
+[root@centos5 ~]# yum --enablerepo=remi,remi-test install phpmyadmin --skip-broken
+</code></p>
+
+<p>or you find phpMyAdmin alread existed in <code>/usr/share/phpMyAdmin</code></p>
+
+<p>You can make a link</p>
+
+<p><code>
+[root@centos5 ~]# ln -s /usr/share/phpMyAdmin /opt/web/www/phpmyadmin/public_html/phpMyAdmin
+</code></p>
+
+<ul>
+<li><p>Please restart php-fpm before test phpMyAdmin <code>service php-fpm restart</code></p></li>
+<li><p>If you do not want to use phpMyAdmin virtual host, you can just add a locaiton in default host.</p></li>
+</ul>
+
+
+<p>Just edit <code># vi /etc/nginx/conf.d/default.conf</code> add</p>
+
+<p>```</p>
+
+<pre><code>location ~ \.php$ {
+    root /opt/web/www/phpmyadmin/public_html;
+    index index.php;
+    include /etc/nginx/fastcgi_params;
+    fastcgi_pass  127.0.0.1:9000;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME /opt/web/www/phpmyadmin/public_html$fastcgi_script_name;
+}
+</code></pre>
+
+<p>```</p>
+
+<p>```
+location /phpMyAdmin/ {</p>
+
+<pre><code>    root /opt/web/www/phpmyadmin/public_html;
+    index  index.html index.htm;
+        location ~ \.php$ {
+            fastcgi_index index.php;
+            include /etc/nginx/fastcgi_params;
+            fastcgi_pass  127.0.0.1:9000;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            #fastcgi_param SCRIPT_FILENAME /opt/web/www/phpmyadmin/public_html/$fastcgi_script_name;
+        }
+}
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>
