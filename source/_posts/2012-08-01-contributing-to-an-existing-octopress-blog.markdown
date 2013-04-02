@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "contributing to an existing Octopress blog"
+title: "Contributing to an existing Octopress blog"
 date: 2012-08-01 17:45
 comments: true
 categories: 
