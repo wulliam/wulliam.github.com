@@ -3,7 +3,7 @@ layout: post
 title: "Contributing to an existing Octopress blog"
 date: 2012-08-01 17:45
 comments: true
-categories: 
+categories: Octopress
 ---
 
 Take my blog as example _wulliam.github.com_  
