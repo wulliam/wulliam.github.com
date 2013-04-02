@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Wuliang's Blog]]></title>
+  <link href="http://wulliam.github.com/atom.xml" rel="self"/>
+  <link href="http://wulliam.github.com/"/>
+  <updated>2012-08-02T15:14:51+08:00</updated>
+  <id>http://wulliam.github.com/</id>
+  <author>
+    <name><![CDATA[Wuliang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/02/git-note/"/>
+    <updated>2012-08-02T13:48:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/02/git-note</id>
+    <content type="html"><![CDATA[<p>This is a note from <em><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic">Git Magic</a></em></p>
+
+<h4>Process to get project from github and update code to do commit</h4>
+
+<p>push your project to git github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push git@github.com:wulliam/wulliam.github.com.git HEAD</span></code></pre></td></tr></table></div></figure>
+
+
+<p>get a project from github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone git@github.com:wulliam/wulliam.github.com.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>commit your code local</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git add .
+</span><span class='line'>$ git commit -a</span></code></pre></td></tr></table></div></figure>
+
+
+<p>update lastet code from github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git pull</span></code></pre></td></tr></table></div></figure>
+
+
+<p>after solve conflict make a commit local</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git commit -a</span></code></pre></td></tr></table></div></figure>
+
+
+<p>push the local change to github</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Useful git command</h4>
+
+<p>Add, Delete, Rename</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git add readme.txt Documentation
+</span><span class='line'>$ git rm kludge.h obsolete.c
+</span><span class='line'>$ git rm -r incriminating/evidence/
+</span><span class='line'>$ git mv bug.c feature.c</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Undo/Redo</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git log
+</span><span class='line'>$ git reset --hard
+</span><span class='line'>$ git checkout 82f5
+</span><span class='line'>$ git checkout master
+</span><span class='line'>$ git checkout 82f5 some.file another.file
+</span><span class='line'>$ git checkout master~5
+</span><span class='line'>$ git reset --hard 766f</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Reverting</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git commit -a
+</span><span class='line'>$ git revert 1b6d</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Get a file</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://server/path/to/files</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Deff</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git diff
+</span><span class='line'>$ git diff "@{yesterday}"
+</span><span class='line'>$ git diff 1b6d "master~2"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Quick fix(make a temp fixes branch, after fix, delete branch)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git commit -a
+</span><span class='line'>$ git checkout -b fixes 1b6d
+</span><span class='line'>$ git commit -a -m "Bug fixed"
+</span><span class='line'>$ git checkout master
+</span><span class='line'>$ git merge fixes
+</span><span class='line'>$ git branch -d fixes </span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Uninterrupted Workflow(simliar to quick fix)</h4>
+
+<p>You are working on master branch, and want to hold on to review, you start branch part2 to continue</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git checkout -b part2
+</span><span class='line'>$ git checkout master  # Go back to Part I.
+</span><span class='line'>$ fix_problem
+</span><span class='line'>$ git commit -a        # Commit the fixes.
+</span><span class='line'>$ git checkout part2   # Go back to Part II.
+</span><span class='line'>$ git merge master     # Merge in those fixes.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Eventually, Part I(master) is approved:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git checkout master  # Go back to Part I.
+</span><span class='line'>$ submit files         # Release to the world!
+</span><span class='line'>$ git merge part2      # Merge in Part II.
+</span><span class='line'>$ git branch -d part2  # Delete "part2" branch.</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Setup up ruby environment for Octopress blog]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog/"/>
+    <updated>2012-08-01T18:08:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/setup-up-ruby-environment-for-octopress-blog</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>Need to install <a href="http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.2-p290.exe">Ruby1.9.2</a></p></li>
+<li><p>Need to install <a href="http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">DevKit</a> for windows environment <br/>
+After install DevKid(extract to a folder)<br/>
+Run devkitvars.bat to update path env or add bin folder to path env<br/>
+Can skip to install RVM or RBENV in windows, skip</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm use 1.9.2@rails31</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Get Ruby bundle</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[contributing to an existing Octopress blog]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog/"/>
+    <updated>2012-08-01T17:45:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/contributing-to-an-existing-octopress-blog</id>
+    <content type="html"><![CDATA[<p>Take my blog as example <em>wulliam.github.com</em><br/>
+You will use following command to get source code (from source branch) and blog content (form master branch)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:wulliam/wulliam.github.com.git
+</span><span class='line'>git checkout source
+</span><span class='line'>mkdir _deploy
+</span><span class='line'>cd _deploy
+</span><span class='line'>git init
+</span><span class='line'>git remote add origin git@github.com:wulliam/wulliam.github.com.git
+</span><span class='line'>git pull origin master
+</span><span class='line'>cd ..
+</span><span class='line'>rake new_post["new post to share"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>reference to original post(GWF will block this url) <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one" title="Octopress: Setting up a Blog and Contributing to an Existing One">Octopress: Setting up a Blog and Contributing to an Existing One</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress setting up note]]></title>
+    <link href="http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note/"/>
+    <updated>2012-08-01T15:25:00+08:00</updated>
+    <id>http://wulliam.github.com/blog/2012/08/01/octopress-setting-up-note</id>
+    <content type="html"><![CDATA[<ul>
+<li>Generate SSH Key</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
+</span><span class='line'>[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | xclip</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>Past public key to github<br/>
+Open https://github.com/account/ssh<br/>
+Add another public key</p></li>
+<li><p>Get octopress code</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git wulliam.github.com</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Preare ruby environment</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update
+</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Creat a new post</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["post title"]</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Preivew blog in localhost</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Open browser to check</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://127.0.0.1:4000</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Preare your github project <br/>
+If you have an account name <em>wulliam</em> in github.com, then create a project name <em>wulliam.github.com</em></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p>   and input your github project url</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git@github.com:wulliam/wulliam.github.com.git</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Check in source to github (in source branch)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m "Initial porject"
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Check in blogs to github (in master branch)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+</feed>
